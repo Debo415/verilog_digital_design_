@@ -1,7 +1,5 @@
-module nand_gate (
-    input A,
-    input B,
-    output Y
-);
-  assign Y = ~(A | B);
+module AND_df(Y,A,B);
+  input A,B;
+  output Y;
+  assign Y=(A | B);
 endmodule
