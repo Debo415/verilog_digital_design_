@@ -48,7 +48,7 @@ module all_gates_tb;
         // Test with loop
         reg A,B;
         integer i;
-            for(i=0; i<16; i=i+1) begin
+        for(i=0; i<4; i=i+1) begin
                 A=i/2;
                 B=i%2;
                 #10;
