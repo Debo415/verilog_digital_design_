@@ -1,4 +1,4 @@
-module nor_df(Y,A,B);
+module nor_gate(Y,A,B);
   input A,B;
   output Y;
   assign Y=~(A | B);
