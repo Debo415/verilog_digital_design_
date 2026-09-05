@@ -43,14 +43,14 @@ module all_gates_tb;
     initial begin
 
         $monitor("A=%b B=%b | AND=%b OR=%b NAND=%b NOR=%b",
-                  A, B, Y_and, Y_or, Y_nand, Y_nor);
+                  A, B, Y_and, Y_or, Y_nand, Y_nor, Y_xor);
 
         // Test with loop
-        reg [3:0] A;
+        reg A,B;
         integer i;
-        initial begin
             for(i=0; i<16; i=i+1) begin
-                A=i;
+                A=i/2;
+                B=i%2;
                 #10;
             end
         end
