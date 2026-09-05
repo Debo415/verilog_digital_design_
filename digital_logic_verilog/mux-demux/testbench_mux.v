@@ -7,4 +7,14 @@ module all_mux_tb;
 
   initial begin
     $monitor("S=%b I=%b | Y21=%b Y41=%b ", S,I,Y2,Y4);
+    reg [3:0] A;
+        integer i;
+        initial begin
+            for(i=0; i<16; i=i+1) begin
+                A=i;
+                #10;
+            end
+        end
+        $finish;
+    end
     
