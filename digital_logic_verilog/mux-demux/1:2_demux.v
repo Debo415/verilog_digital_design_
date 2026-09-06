@@ -10,4 +10,5 @@ module demux_12(
           1'b1: Y2[1] = I2;
     endcase
 end
+endmodule
 
