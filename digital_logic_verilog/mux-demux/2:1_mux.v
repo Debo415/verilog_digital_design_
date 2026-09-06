@@ -1,6 +1,6 @@
-module mux_21_df(Y,I,S);
-  input [1:0] I;
-  input S;
-  output Y;
-  assign Y = S? I[1] : I[0];
+module mux_21(Y2,I2,S2);
+  input [1:0] I2;
+  input S2;
+  output Y2;
+  assign Y2 = S2? I2[1] : I2[0];
 endmodule
