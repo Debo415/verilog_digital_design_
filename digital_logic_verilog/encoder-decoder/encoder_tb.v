@@ -1,7 +1,7 @@
 module encoder_42_testbench;
   reg [3:0] I;
   wire [1:0] Y;
-  encoder_42_behavioral uut(.Y(Y),.D(D));
+  encode_42 dut(.Y(Y),.I(I));
   initial begin
     $monitor ("I = %b, Y = %b", I, Y);
     I = 4'b0001;
