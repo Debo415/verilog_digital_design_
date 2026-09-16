@@ -20,14 +20,44 @@ initial begin
     rst = 1;
     d = 4'b0000;
 
-    #10 rst = 0;
+   #5; 
+    if (q === 4'b0000) 
+        $display("PASS: Reset test | q = %b", q); 
+    else 
+        $display("FAIL: Reset test | q = %b, expected = 0000", q);
+    rst = 0; 
+    d = 4'b1010; 
+    @(posedge clk);
+    #1; 
+    if (q === d) 
+        $display("PASS: Load 1010 | d = %b | q = %b", d, q); 
+    else 
+        $display("FAIL: Load 1010 | d = %b | q = %b", d, q);
+    d = 4'b1111;
+    @(posedge clk);
+    #1;
+    if (q === d) 
+        $display("PASS: Load 1111 | d = %b | q = %b", d, q); 
+    else 
+        $display("FAIL: Load 1111 | d = %b | q = %b", d, q);
+    d = 4'b0000;
+    @(posedge clk); 
+    #1; 
+    if (q === d) 
+        $display("PASS: Hold test");
+    else 
+        $display("FAIL: Hold test");
+    rst = 1;
+    @(posedge clk);
+    #1; 
+    if (q === 4'b0000) 
+        $display("PASS: Reset again | q = %b", q);
+    else
+        $display("FAIL: Reset again | q = %b, expected = 0000", q);
+    
 
-    #10 d = 4'b1010;
-    #10 d = 4'b1100;
-    #10 d = 4'b0011;
-    #10 d = 4'b1111;
-
-    #20 $finish;
+    #5 
+    $finish;
 end
 
 initial begin
