@@ -20,7 +20,8 @@ initial begin
     rst = 1;
     d = 4'b0000;
 
-   #5; 
+    @(posedge clk);
+    #1; 
     if (q === 4'b0000) 
         $display("PASS: Reset test | q = %b", q); 
     else 
