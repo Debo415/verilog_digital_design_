@@ -39,18 +39,21 @@ module tb_alu_8bit;
         A = 8'd5;
         B = 8'd3;
         opcode = 3'b000;
+        #10;
         display_result();
 
         // 255 + 1 = 0 with carry
         A = 8'd255;
         B = 8'd1;
         opcode = 3'b000;
+        #10;
         display_result();
 
         // Signed overflow: 127 + 1
         A = 8'd127;
         B = 8'd1;
         opcode = 3'b000;
+        #10;
         display_result();
 
         // SUBTRACTION
@@ -58,36 +61,42 @@ module tb_alu_8bit;
         A = 8'd10;
         B = 8'd3;
         opcode = 3'b001;
+        #10;
         display_result();
 
         // 3 - 10 = 249 (-7 in signed 8-bit)
         A = 8'd3;
         B = 8'd10;
         opcode = 3'b001;
+        #10;
         display_result();
 
         // 5 - 5 = 0
         A = 8'd5;
         B = 8'd5;
         opcode = 3'b001;
+        #10;
         display_result();
 
         // AND
         A = 8'b10101010;
         B = 8'b11110000;
         opcode = 3'b010;
+        #10;
         display_result();
 
         // OR
          A = 8'b10101010;
         B = 8'b11110000;
         opcode = 3'b011;
+        #10;
         display_result();
 
         // XOR
         A = 8'b10101010;
         B = 8'b11110000;
         opcode = 3'b100;
+        #10;
         display_result();
 
         // SHIFT LEFT
@@ -95,12 +104,13 @@ module tb_alu_8bit;
         A = 8'b00001111;
         B = 8'b00000000;
         opcode = 3'b101;
+        #10;
         display_result();
-
         // MSB is shifted out → carry = 1
         A = 8'b10000001;
         B = 8'b00000000;
         opcode = 3'b101;
+        #10;
         display_result();
 
         // SHIFT RIGHT
@@ -109,12 +119,14 @@ module tb_alu_8bit;
         A = 8'b11110000;
         B = 8'b00000000;
         opcode = 3'b110;
+        #10;
         display_result();
 
         // LSB is shifted out → carry = 1
         A = 8'b00000001;
         B = 8'b00000000;
         opcode = 3'b110;
+        #10;
         display_result();
 
         // COMPARE
@@ -123,12 +135,14 @@ module tb_alu_8bit;
         A = 8'd5;
         B = 8'd5;
         opcode = 3'b111;
+        #10;
         display_result();
 
         // 5 == 3 → result = 0
         A = 8'd5;
         B = 8'd3;
         opcode = 3'b111;
+        #10;
         display_result();
 
         $display("TEST COMPLETE");
