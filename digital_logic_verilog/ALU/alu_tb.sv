@@ -31,6 +31,8 @@ module tb_alu_8bit;
     endtask
 
     initial begin
+        $dumpfile("alu_8bit.vcd");
+        $dumpvars(0, tb_alu_8bit);
       
         // ADDITION
         // 5 + 3 = 8
